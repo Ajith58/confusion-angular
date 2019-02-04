@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('confusionApp')
-.constant("baseURL", "https://192.168.43.91:3443/")
+var baseURL = process.env.baseURL || 3443;
 .factory('menuFactory', ['$resource', 'baseURL', function ($resource, baseURL) {
 
         return $resource(baseURL + "dishes/:id", null, {
